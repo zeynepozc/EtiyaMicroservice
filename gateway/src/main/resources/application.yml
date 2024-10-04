@@ -8,7 +8,7 @@ spring:
           - id: customer-service.routing
             uri: lb://customerservice # load-balancing
             predicates:
-              - Path=/api/customers/**
+              - Path=/api/individualcustomers/**
           - id: product-service.routing
             uri: lb://productservice
             predicates:

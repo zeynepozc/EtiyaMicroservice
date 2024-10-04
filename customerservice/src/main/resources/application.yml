@@ -2,7 +2,7 @@ spring:
   application:
     name: customerservice
   datasource:
-    url: jdbc:mysql://localhost:3306/customer_db?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/customer_db
     username: my_user
     password: test
     driver-class-name: com.mysql.cj.jdbc.Driver

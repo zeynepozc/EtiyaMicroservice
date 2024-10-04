@@ -13,7 +13,7 @@ services:
   postgresql:
     image: docker.io/library/postgres:latest
     environment:
-       POSTGRES_DB: postgres
+       POSTGRES_DB: product_db
        POSTGRES_USER: postgres
        POSTGRES_PASSWORD: test
     volumes:
