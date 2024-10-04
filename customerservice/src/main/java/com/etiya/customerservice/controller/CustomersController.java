@@ -10,6 +10,6 @@ public class CustomersController {
   @GetMapping
   public String get() {
     System.out.println("İstek geldi ve işleniyor..");
-    return "Hello from customer service";
+    return "Hello from customer service çağatay";
   }
 }
