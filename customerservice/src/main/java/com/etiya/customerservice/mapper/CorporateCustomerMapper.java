@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 public interface CorporateCustomerMapper {
     CorporateCustomerMapper INSTANCE = Mappers.getMapper(CorporateCustomerMapper.class);
 
-    CorporateCustomerMapper customerFromCreateDto(CreateIndividualCustomerRequestDto dto);
+//    CorporateCustomerMapper customerFromCreateDto(CreateIndividualCustomerRequestDto dto);
     // CreateCorporateCustomerRequestDto
 
 }
