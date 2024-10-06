@@ -17,16 +17,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductsController {
   private final ProductService productService;
-  @GetMapping
+  //@GetMapping
   public String get() {
     System.out.println("Hello from product service");
     return "Hello from product service";
   }
 
-//  @GetMapping
-//  public List<ListProductResponseDto> getAll(){
-//    return productService.getAll();
-//  }
+  @GetMapping
+  public List<ListProductResponseDto> getAll(){
+    return productService.getAll();
+  }
 
   @PostMapping
   public ResponseEntity<CreateProductResponseDto> add(@RequestBody @Valid CreateProductRequestDto createProductRequestDto){
