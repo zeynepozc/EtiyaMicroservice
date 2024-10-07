@@ -1,33 +1,16 @@
 spring:
+  config:
+    import: "optional:configserver:"
   application:
     name: productservice
-  datasource:
-    url: jdbc:postgresql://localhost:5432/product_db
-    username: postgres
-    password: 12345
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+  cloud:
+    config:
+      uri: http://localhost:8001
+      profile: local
+      label: main
 
-server:
-  port: 8082
+# http://localhost:8001/productservice/dev/master
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://localhost:8888/eureka/
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+
+
