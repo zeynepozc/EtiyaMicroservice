@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/mhmtacar/etiya-microservice-configurations
+          uri: https://github.com/mhmtacar/etiya-microservice-configurations.git
 
 server:
   port: 8001
