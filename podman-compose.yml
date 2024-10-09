@@ -13,6 +13,12 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - common
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
   postgresql:
     container_name: postgresql
     image: docker.io/library/postgres:latest
@@ -26,6 +32,24 @@ services:
       - 5432:5432
     networks:
       - common
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+       - common
 
   configserver:
     container_name: configserver
@@ -42,6 +66,11 @@ services:
     depends_on:
       - mysql
       - postgresql
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/actuator/health"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
 
   eureka:
     container_name: eureka
@@ -56,7 +85,14 @@ services:
     networks:
       - common
     depends_on:
-      - configserver
+      configserver:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
   gateway:
     container_name: gateway
     image: "localhost/gateway"
@@ -72,7 +108,9 @@ services:
       - SPRING_CLOUD_CONFIG_PROFILE=dev
       - SPRING_CLOUD_CONFIG_LABEL=main
     depends_on:
-      - eureka
+      eureka:
+        condition: service_healthy
+
   customerservice:
     container_name: customerservice
     image: "localhost/customerservice"
@@ -87,7 +125,9 @@ services:
       - SPRING_CLOUD_CONFIG_PROFILE=dev
       - SPRING_CLOUD_CONFIG_LABEL=main
     depends_on:
-      - eureka
+      eureka:
+        condition: service_healthy
+
   productservice:
     container_name: productservice
     image: "localhost/productservice"
@@ -102,7 +142,9 @@ services:
       - SPRING_CLOUD_CONFIG_PROFILE=dev
       - SPRING_CLOUD_CONFIG_LABEL=main
     depends_on:
-      - eureka
+      eureka:
+        condition: service_healthy
+
 
 networks:
   common:
@@ -110,3 +152,4 @@ networks:
 volumes:
   mysql_data:
   postgres_data:
+  mongo_data:
