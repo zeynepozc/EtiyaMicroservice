@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: productservice
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8001
+      profile: local
+      label: main
+
+# http://localhost:8001/productservice/dev/master
+
+
+
+

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: orderservice
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8001
+      profile: local
+      label: main
+  
+
+
+

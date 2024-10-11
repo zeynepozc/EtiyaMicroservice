@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mhmtacar/etiya-microservice-configurations.git
+
+server:
+  port: 8001
+
+
