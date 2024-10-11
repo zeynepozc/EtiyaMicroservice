@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/identityserver/pom.xml" />
         <option value="$PROJECT_DIR$/productservice/pom.xml" />
         <option value="$PROJECT_DIR$/customerservice/pom.xml" />
+        <option value="$PROJECT_DIR$/identityservice/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

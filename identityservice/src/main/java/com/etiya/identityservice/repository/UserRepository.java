@@ -1,6 +1,6 @@
-package com.etiya.identityserver.repository;
+package com.etiya.identityservice.repository;
 
-import entity.User;
+import com.etiya.identityservice.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

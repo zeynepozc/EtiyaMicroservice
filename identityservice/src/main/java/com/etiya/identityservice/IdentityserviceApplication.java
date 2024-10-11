@@ -1,13 +1,13 @@
-package com.etiya.identityserver;
+package com.etiya.identityservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IdentityserverApplication {
+public class IdentityserviceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(IdentityserverApplication.class, args);
+        SpringApplication.run(IdentityserviceApplication.class, args);
     }
 
 }

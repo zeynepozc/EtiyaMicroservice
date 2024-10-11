@@ -1,6 +1,6 @@
-package entity;
+package com.etiya.identityservice.entity;
 
-import com.etiya.identityserver.core.entity.BaseEntity;
+import com.etiya.identityservice.core.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import java.util.Collection;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "categories")
+@Table(name = "users")
 @Entity
 public class User extends BaseEntity implements UserDetails {
     @Id

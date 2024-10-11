@@ -1,4 +1,4 @@
-package com.etiya.identityserver.core.entity;
+package com.etiya.identityservice.core.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
