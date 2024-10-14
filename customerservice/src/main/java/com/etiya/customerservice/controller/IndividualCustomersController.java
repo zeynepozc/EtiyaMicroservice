@@ -1,11 +1,9 @@
 package com.etiya.customerservice.controller;
 
-import com.etiya.customerservice.dto.individualcustomer.IndCustCreateRequestDto;
-import com.etiya.customerservice.dto.individualcustomer.IndCustCreateResponseDto;
-import com.etiya.customerservice.entity.Customer;
+import com.etiya.customerservice.service.dto.request.individualCustomer.IndCustCreateRequestDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.IndCustCreateResponseDto;
 import com.etiya.customerservice.entity.IndividualCustomer;
-import com.etiya.customerservice.service.IndividualCustomerService;
-import jakarta.ws.rs.GET;
+import com.etiya.customerservice.service.abstracts.IndividualCustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

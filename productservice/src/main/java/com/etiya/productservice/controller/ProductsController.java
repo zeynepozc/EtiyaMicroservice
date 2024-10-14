@@ -18,15 +18,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductsController {
   private final ProductService productService;
-  //@GetMapping
-  public String get() {
-    System.out.println("Hello from product service");
-    return "Hello from product service";
-  }
-
   @GetMapping
   public List<ListProductResponseDto> getAll(){
     return productService.getAll();
+  }
+
+  @PostMapping("search")
+  public List<ListProductResponseDto> getByIds(@RequestBody List<Long> ids)
+  {
+    return productService.search(ids);
   }
 
   @PostMapping
@@ -38,11 +38,5 @@ public class ProductsController {
     } else {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
-  }
-
-  @PostMapping("search")
-  public List<ListProductResponseDto> getByIds(@RequestBody List<Long> ids)
-  {
-    return productService.search(ids);
   }
 }

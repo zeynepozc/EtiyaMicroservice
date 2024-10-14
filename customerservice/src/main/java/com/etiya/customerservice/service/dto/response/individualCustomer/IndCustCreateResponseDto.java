@@ -1,8 +1,5 @@
-package com.etiya.customerservice.dto.individualcustomer;
+package com.etiya.customerservice.service.dto.response.individualCustomer;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,27 +9,16 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class IndCustCreateRequestDto {
+@AllArgsConstructor
+public class IndCustCreateResponseDto {
 
-    @NotEmpty
-    @Size(min = 11, max = 11)
     private String natID;
-
-    @NotEmpty
     private String firstName;
-    @NotEmpty
     private String lastName;
-    @NotBlank
     private String middleName;
-    @NotEmpty
     private String fatherName;
-    @NotEmpty
     private String motherName;
-    @NotEmpty
     private String gender;
-    @NotEmpty
     private LocalDate birthDate;
-
 }

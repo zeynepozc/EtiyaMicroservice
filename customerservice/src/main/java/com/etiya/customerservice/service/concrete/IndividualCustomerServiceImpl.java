@@ -1,8 +1,8 @@
-package com.etiya.customerservice.service;
+package com.etiya.customerservice.service.concrete;
 
-import com.etiya.customerservice.dto.individualcustomer.IndCustCreateRequestDto;
-import com.etiya.customerservice.dto.individualcustomer.IndCustCreateResponseDto;
-import com.etiya.customerservice.entity.Customer;
+import com.etiya.customerservice.service.abstracts.IndividualCustomerService;
+import com.etiya.customerservice.service.dto.request.individualCustomer.IndCustCreateRequestDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.IndCustCreateResponseDto;
 import com.etiya.customerservice.entity.IndividualCustomer;
 import com.etiya.customerservice.mapper.IndividualCustomerMapper;
 import com.etiya.customerservice.repository.IndividualCustomerRepository;

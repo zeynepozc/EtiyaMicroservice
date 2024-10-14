@@ -5,14 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9257abce-84c2-48c0-b885-a6fc4d23e55d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/cagataysero/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/io/github/cagataysero/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/client/ProductServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/entity/BillingAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/request/city/UpdateCityRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/response/city/CreateCityResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/controller/IndividualCustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/controller/IndividualCustomersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/dto/corporatecustomer/CreateCorporateCustomerRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/request/corporateCustomer/CreateCorporateCustomerRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/dto/customeraccount/CreateCustomerAccountRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/request/customerAccount/CreateCustomerAccountRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/dto/individualcustomer/IndCustCreateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/request/individualCustomer/IndCustCreateRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/dto/individualcustomer/IndCustCreateResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/response/individualCustomer/IndCustCreateResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/entity/CustomerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/entity/CustomerAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/mapper/IndividualCustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/mapper/IndividualCustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/IndividualCustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/abstracts/IndividualCustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/IndividualCustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/concrete/IndividualCustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../productservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productservice/src/main/java/com/etiya/productservice/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../productservice/src/main/java/com/etiya/productservice/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productservice/src/main/java/com/etiya/productservice/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../productservice/src/main/java/com/etiya/productservice/repository/ProductRepository.java" afterDir="false" />
+    </list>
+    <list id="c7bfc7b7-e024-4f7f-9b02-62960e5aa946" name="Changes by cemre.senyuva" comment="">
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/entity/ContactMedium.java" afterDir="false" />
+    </list>
+    <list id="76cd073a-ea83-42f5-8135-62c5d509f722" name="Changes by mehmet.acar" comment="">
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/mapper/CityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productservice/src/main/java/com/etiya/productservice/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../productservice/src/main/java/com/etiya/productservice/entity/Product.java" afterDir="false" />
+    </list>
+    <list id="14cb990f-5d95-4e84-bd5b-8c8a7d02d785" name="Changes by zeynep.ozcan" comment="">
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/entity/BillingProducts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customerservice/src/main/java/com/etiya/customerservice/service/dto/response/city/GetByIdCityResponseDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,12 +44,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2n9r2g7bnb3P3JHi6YPYNgMh1Ax" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,14 +59,25 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.core [clean,deploy].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/cagatay.sero/Desktop/Projects/java/EtiyaMicroservice/core",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean deploy" />
+    </option>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -59,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728395929993</updated>
       <workItem from="1728395931130" duration="217000" />
+      <workItem from="1728906604531" duration="1379000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
-package com.etiya.customerservice.dto.corporatecustomer;
+package com.etiya.customerservice.service.dto.request.city;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,14 +11,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCorporateCustomerRequestDto {
-
+public class UpdateCityRequestDto {
     @NotEmpty
-    private String companyName;
+    private String city;
 
-    @NotEmpty
-    private String companyNumber;
-
-    @NotEmpty
-    private String taxNumber;
+    @NotNull
+    private Short countryId;
 }

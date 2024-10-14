@@ -1,7 +1,5 @@
-package com.etiya.customerservice.dto.customeraccount;
+package com.etiya.customerservice.service.dto.request.customerAccount;
 
-import com.etiya.customerservice.entity.Customer;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
