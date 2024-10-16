@@ -1,4 +1,4 @@
-package com.etiya.customerservice.service.dto.response.city;
+package com.etiya.customerservice.service.dto.response.district;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCityResponseDto {
-    public String cityName;
-    public Short countryId;
+public class ListDistrictResponseDto {
+    private Long id;
+    private String name;
 }

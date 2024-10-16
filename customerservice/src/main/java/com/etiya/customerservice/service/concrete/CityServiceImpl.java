@@ -1,5 +1,6 @@
 package com.etiya.customerservice.service.concrete;
 
+import com.etiya.customerservice.entity.City;
 import com.etiya.customerservice.mapper.CityMapper;
 import com.etiya.customerservice.repository.CityRepository;
 import com.etiya.customerservice.service.abstracts.CityService;
@@ -13,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,22 +26,29 @@ public class CityServiceImpl implements CityService
 
     @Override
     public List<ListCityResponseDto> getAll() {
-        return null;
+        List<City> cityList = cityRepository.findAll();
+        return cityMapper.listCityResponseDtoListFromCityList(cityList);
     }
 
     @Override
     public GetByIdCityResponseDto getById(Long id) {
-        return null;
+        Optional<City> city = cityRepository.findById(id);
+        return cityMapper.getByIdCityResponseDtoFromCity(city.get());
     }
 
     @Override
-    public CreateCityResponseDto add(CreateCityRequestDto dto) {
-        return null;
+    public CreateCityResponseDto add(CreateCityRequestDto createCityRequestDto) {
+        // todo check if the given country exists
+        City city = cityMapper.cityFromCreateCityRequestDto(createCityRequestDto);
+        return cityMapper.createCityResponseDtoFromCity(cityRepository.save(city));
     }
 
     @Override
-    public UpdateCityResponseDto update(UpdateCityRequestDto dto) {
-        return null;
+    public UpdateCityResponseDto update(UpdateCityRequestDto updateCityRequestDto) {
+        // todo check if the given country exists
+        City city = cityMapper.cityFromUpdateCityRequestDto(updateCityRequestDto);
+        city = cityRepository.save(city);
+        return cityMapper.updateCityResponseDtoFromCity(city);
     }
 
     @Override

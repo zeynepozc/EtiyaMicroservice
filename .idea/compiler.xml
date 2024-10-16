@@ -13,7 +13,7 @@
         <module name="gateway" />
         <module name="orderservice" />
       </profile>
-      <profile name="Annotation profile for customerservice" enabled="true">
+      <profile name="Annotation profile for productservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -29,7 +29,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="core" target="17" />
+      <module name="core" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

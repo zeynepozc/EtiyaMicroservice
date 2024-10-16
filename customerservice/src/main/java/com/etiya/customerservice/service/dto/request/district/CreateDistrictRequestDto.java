@@ -1,4 +1,5 @@
-package com.etiya.customerservice.service.dto.request.city;
+package com.etiya.customerservice.service.dto.request.district;
+
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -11,13 +12,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateCityRequestDto {
-    @NotNull
-    private Long id;
-
+public class CreateDistrictRequestDto{
     @NotEmpty
-    private String city;
+    private String name;
 
     @NotNull
-    private Short countryId;
+    private Long city;
 }
