@@ -1,10 +1,9 @@
 package com.etiya.productservice.controller;
 
-import com.etiya.productservice.dto.CreateProductRequestDto;
-import com.etiya.productservice.dto.CreateProductResponseDto;
-import com.etiya.productservice.dto.ListProductResponseDto;
-import com.etiya.productservice.entity.Product;
-import com.etiya.productservice.service.ProductService;
+import com.etiya.productservice.service.dto.request.product.CreateProductRequestDto;
+import com.etiya.productservice.service.dto.responses.product.CreateProductResponseDto;
+import com.etiya.productservice.service.dto.responses.product.ListProductResponseDto;
+import com.etiya.productservice.service.abstracts.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

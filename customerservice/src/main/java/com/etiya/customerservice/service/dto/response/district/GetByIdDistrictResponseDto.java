@@ -11,4 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class GetByIdDistrictResponseDto {
     private String name;
+    private Long cityId;
 }

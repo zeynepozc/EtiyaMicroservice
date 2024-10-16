@@ -1,11 +1,11 @@
 package com.etiya.productservice.service.concrete;
 
-import com.etiya.productservice.dto.request.productAttributeRequests.CreateProductAttributeRequestDto;
-import com.etiya.productservice.dto.request.productAttributeRequests.UpdateProductAttributeRequestDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.CreateProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.GetByIdProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.ListProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.UpdateProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.request.productAttribute.CreateProductAttributeRequestDto;
+import com.etiya.productservice.service.dto.request.productAttribute.UpdateProductAttributeRequestDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.CreateProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.GetByIdProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.ListProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.UpdateProductAttributeResponseDto;
 import com.etiya.productservice.mapper.ProductAttributeMapper;
 import com.etiya.productservice.repository.ProductAttributeRepository;
 import com.etiya.productservice.service.abstracts.ProductAttributeService;

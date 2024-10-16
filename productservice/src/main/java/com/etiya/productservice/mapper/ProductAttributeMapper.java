@@ -1,11 +1,11 @@
 package com.etiya.productservice.mapper;
 
-import com.etiya.productservice.dto.request.productAttributeRequests.CreateProductAttributeRequestDto;
-import com.etiya.productservice.dto.request.productAttributeRequests.UpdateProductAttributeRequestDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.CreateProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.GetByIdProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.ListProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.UpdateProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.request.productAttribute.CreateProductAttributeRequestDto;
+import com.etiya.productservice.service.dto.request.productAttribute.UpdateProductAttributeRequestDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.CreateProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.GetByIdProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.ListProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.UpdateProductAttributeResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import com.etiya.productservice.entity.ProductAttribute;

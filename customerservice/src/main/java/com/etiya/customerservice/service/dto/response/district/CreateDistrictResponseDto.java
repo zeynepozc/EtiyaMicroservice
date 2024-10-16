@@ -12,4 +12,5 @@ import lombok.Setter;
 public class CreateDistrictResponseDto {
     private Long id;
     private String name;
+    private Long cityId;
 }

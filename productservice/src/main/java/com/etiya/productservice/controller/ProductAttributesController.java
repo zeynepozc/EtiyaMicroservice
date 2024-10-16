@@ -1,17 +1,17 @@
 package com.etiya.productservice.controller;
 
-import com.etiya.productservice.dto.request.productAttributeRequests.CreateProductAttributeRequestDto;
-import com.etiya.productservice.dto.request.productAttributeRequests.UpdateProductAttributeRequestDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.CreateProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.GetByIdProductAttributeResponseDto;
-import com.etiya.productservice.dto.responses.productAttributeResponses.UpdateProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.request.productAttribute.CreateProductAttributeRequestDto;
+import com.etiya.productservice.service.dto.request.productAttribute.UpdateProductAttributeRequestDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.CreateProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.GetByIdProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.UpdateProductAttributeResponseDto;
 import com.etiya.productservice.service.abstracts.ProductAttributeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.etiya.productservice.dto.responses.productAttributeResponses.ListProductAttributeResponseDto;
+import com.etiya.productservice.service.dto.responses.productAttribute.ListProductAttributeResponseDto;
 
 import java.util.List;
 

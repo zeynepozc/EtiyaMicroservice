@@ -21,18 +21,23 @@ public abstract class CityMapper {
     public abstract City cityFromCreateCityRequestDto(CreateCityRequestDto dto);
 
     @Mapping(source="city", target = "name")
+    @Mapping(source="countryId", target = "country.id")
     public abstract City cityFromUpdateCityRequestDto(UpdateCityRequestDto dto);
 
     @Mapping(source="name", target = "cityName")
     @Mapping(source="country.id", target = "countryId")
     public abstract CreateCityResponseDto createCityResponseDtoFromCity(City city);
 
-    // @Mapping(source="city.name", target = "cityId")
+    @Mapping(source="country.id", target = "countryId")
     public abstract GetByIdCityResponseDto getByIdCityResponseDtoFromCity(City city);
 
-    // @Mapping(source="city.name", target = "cityId")
+    @Mapping(source="country.id", target = "countryId")
     public abstract UpdateCityResponseDto updateCityResponseDtoFromCity(City city);
 
     @Mapping(source="country.id", target = "countryId")
     public abstract List<ListCityResponseDto> listCityResponseDtoListFromCityList(List<City> city);
+
+    @Mapping(source="country.id", target = "countryId")
+    public abstract ListCityResponseDto cityToListCityResponseDto(City city);
+
 }

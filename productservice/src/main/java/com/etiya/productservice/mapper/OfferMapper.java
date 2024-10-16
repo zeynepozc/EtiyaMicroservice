@@ -1,9 +1,12 @@
 package com.etiya.productservice.mapper;
-import com.etiya.productservice.dto.request.offerRequest.*;
-import com.etiya.productservice.dto.responses.offerResponses.*;
 import com.etiya.productservice.entity.Offer;
+import com.etiya.productservice.service.dto.request.offer.CreateOfferRequestDto;
+import com.etiya.productservice.service.dto.request.offer.UpdateOfferRequestDto;
+import com.etiya.productservice.service.dto.responses.offer.CreateOfferResponseDto;
+import com.etiya.productservice.service.dto.responses.offer.GetByIdOfferResponseDto;
+import com.etiya.productservice.service.dto.responses.offer.ListOfferResponseDto;
+import com.etiya.productservice.service.dto.responses.offer.UpdateOfferResponseDto;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 

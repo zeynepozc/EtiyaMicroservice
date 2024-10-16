@@ -1,12 +1,14 @@
 package com.etiya.productservice.mapper;
 
-import com.etiya.productservice.dto.CreateProductResponseDto;
+import com.etiya.productservice.service.dto.responses.product.CreateProductResponseDto;
+import com.etiya.productservice.service.dto.request.product.CreateProductRequestDto;
+import com.etiya.productservice.service.dto.responses.product.ListProductResponseDto;
 import com.etiya.productservice.entity.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.ReportingPolicy;
+
 import java.util.List;
-import com.etiya.productservice.dto.*;
+
 import org.mapstruct.factory.Mappers;
 
 @Mapper

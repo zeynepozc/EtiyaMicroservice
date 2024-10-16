@@ -16,17 +16,25 @@ import java.util.List;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public abstract class DistrictMapper {
 
-    @Mapping(source="city", target = "city.name")
+    @Mapping(source="city", target = "city.id")
     public abstract District districtFromCreateDistrictRequestDto(CreateDistrictRequestDto dto);
 
+    @Mapping(source="cityId", target = "city.id")
     public abstract District districtFromUpdateDistrictRequestDto(UpdateDistrictRequestDto dto);
 
+    @Mapping(source="city.id", target = "cityId")
     public abstract CreateDistrictResponseDto createDistrictResponseDtoFromDistrict(District district);
 
+    @Mapping(source="city.id", target = "cityId")
     public abstract GetByIdDistrictResponseDto getByIdDistrictResponseDtoFromDistrict(District district);
 
+    @Mapping(source="city.id", target = "cityId")
     public abstract UpdateDistrictResponseDto updateDistrictResponseDtoFromDistrict(District district);
 
+    @Mapping(source="city.id", target = "cityId")
     public abstract List<ListDistrictResponseDto> listDistrictResponseDtoListFromDistrictList(List<District> districtList);
+
+    @Mapping(source="city.id", target = "cityId")
+    public abstract ListDistrictResponseDto districtToListDistrictResponseDto(District district);
 
 }
