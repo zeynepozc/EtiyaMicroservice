@@ -7,19 +7,17 @@ import com.etiya.productservice.service.dto.responses.productAttribute.GetByIdPr
 import com.etiya.productservice.service.dto.responses.productAttribute.ListProductAttributeResponseDto;
 import com.etiya.productservice.service.dto.responses.productAttribute.UpdateProductAttributeResponseDto;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
+import org.mapstruct.ReportingPolicy;
 import com.etiya.productservice.entity.ProductAttribute;
 
 import java.util.List;
 
-@Mapper
-public interface ProductAttributeMapper {
-    ProductAttributeMapper INSTANCE = Mappers.getMapper(ProductAttributeMapper.class);
-
-    ProductAttribute productAttributeFromCreateProductAttributeRequestDto(CreateProductAttributeRequestDto createProductAttributeRequestDto);
-    CreateProductAttributeResponseDto createProductAttributeResponseDtoFromProductAttribute(ProductAttribute productAttribute);
-    ProductAttribute productAttributeFromUpdateProductAttributeRequestDto(UpdateProductAttributeRequestDto updateProductAttributeRequestDto);
-    UpdateProductAttributeResponseDto updateProductAttributeResponseDtoFromProductAttribute(ProductAttribute productAttribute);
-    List<ListProductAttributeResponseDto> productAttributeList(List<ProductAttribute> productAttributeList);
-    GetByIdProductAttributeResponseDto getByIdProductAttributeResponseDtoFromProductAttribute(ProductAttribute productAttribute);
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public abstract class ProductAttributeMapper {
+    public abstract  ProductAttribute productAttributeFromCreateProductAttributeRequestDto(CreateProductAttributeRequestDto createProductAttributeRequestDto);
+    public abstract CreateProductAttributeResponseDto createProductAttributeResponseDtoFromProductAttribute(ProductAttribute productAttribute);
+    public abstract ProductAttribute productAttributeFromUpdateProductAttributeRequestDto(UpdateProductAttributeRequestDto updateProductAttributeRequestDto);
+    public abstract UpdateProductAttributeResponseDto updateProductAttributeResponseDtoFromProductAttribute(ProductAttribute productAttribute);
+    public abstract List<ListProductAttributeResponseDto> productAttributeList(List<ProductAttribute> productAttributeList);
+    public abstract GetByIdProductAttributeResponseDto getByIdProductAttributeResponseDtoFromProductAttribute(ProductAttribute productAttribute);
 }

@@ -18,25 +18,25 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AttributeValueServiceImpl implements AttributeValueService {
     private final AttributeValueRepository attributeValueRepository;
-
+    private final AttributeValueMapper attributeValueMapper;
     @Override
     public List<ListAttributeValueResponseDto> getAll() {
         List<AttributeValue> attributeValues = attributeValueRepository.findAll();
-        return AttributeValueMapper.INSTANCE.attributeValueList(attributeValues);
+        return attributeValueMapper.attributeValueList(attributeValues);
     }
 
     @Override
     public GetByIdAttributeValueResponseDto getById(Long id) {
         AttributeValue attributeValue = attributeValueRepository.findById(id).orElseThrow();
-        return AttributeValueMapper.INSTANCE.getByIdAttributeValueResponseDtoFromAttributeValue(attributeValue);
+        return attributeValueMapper.getByIdAttributeValueResponseDtoFromAttributeValue(attributeValue);
     }
 
     @Override
     public CreateAttributeValueResponseDto add(CreateAttributeValueRequestDto createAttributeValueRequestDto) {
-        AttributeValue attributeValue = AttributeValueMapper.INSTANCE.attributeValueFromCreateAttributeValueRequestDto(createAttributeValueRequestDto);
+        AttributeValue attributeValue = attributeValueMapper.attributeValueFromCreateAttributeValueRequestDto(createAttributeValueRequestDto);
         attributeValue.setActive(true);
         AttributeValue addedAttributeValue = attributeValueRepository.save(attributeValue);
-        return AttributeValueMapper.INSTANCE.createAttributeValueResponseDtoFromAttributeValue(addedAttributeValue);
+        return attributeValueMapper.createAttributeValueResponseDtoFromAttributeValue(addedAttributeValue);
     }
 
     @Override
@@ -46,9 +46,9 @@ public class AttributeValueServiceImpl implements AttributeValueService {
 
     @Override
     public UpdateAttributeValueResponseDto update(Long id, UpdateAttributeValueRequestDto updateAttributeValueRequestDto) {
-        AttributeValue attributeValue = AttributeValueMapper.INSTANCE.attributeValueFromUpdateAttributeValueRequestDto(updateAttributeValueRequestDto);
+        AttributeValue attributeValue = attributeValueMapper.attributeValueFromUpdateAttributeValueRequestDto(updateAttributeValueRequestDto);
         attributeValue.setId(id);
         AttributeValue updatedAttributeValue = attributeValueRepository.save(attributeValue);
-        return AttributeValueMapper.INSTANCE.updateAttributeValueResponseDtoFromAttributeValue(updatedAttributeValue);
+        return attributeValueMapper.updateAttributeValueResponseDtoFromAttributeValue(updatedAttributeValue);
     }
 }

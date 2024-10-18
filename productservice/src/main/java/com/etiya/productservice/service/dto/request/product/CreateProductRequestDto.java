@@ -19,10 +19,18 @@ import java.math.BigDecimal;
 public class CreateProductRequestDto {
     @NotEmpty
     private String name;
+
+    @Positive
+    private Long categoryId;
+
+    @NotEmpty
+    private String description;
+
     @Positive
     private BigDecimal price;
+
     @PositiveOrZero
     private int stockQuantity;
-    @Positive
-    private int categoryId;
+
+    private boolean isActive;
 }

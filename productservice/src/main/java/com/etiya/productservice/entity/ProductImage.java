@@ -1,5 +1,6 @@
 package com.etiya.productservice.entity;
 
+import io.github.cagataysero.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Table(name = "product_images")
 @Entity
-public class ProductImage {
+public class ProductImage extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -30,15 +31,5 @@ public class ProductImage {
     @Column(name = "image_url")
     private String imageUrl;
 
-    //Base Entityden alınacak
-    @CreationTimestamp
-    @Column(name = "created_at",updatable = false)
-    private LocalDateTime createdAt;
 
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
-    @Column(name = "deleted_at")
-    private LocalDateTime deletedAt;
 }

@@ -1,45 +1,59 @@
 package com.etiya.customerservice.service.concrete;
 
-import com.etiya.customerservice.service.abstracts.IndividualCustomerService;
-import com.etiya.customerservice.service.dto.request.individualCustomer.IndCustCreateRequestDto;
-import com.etiya.customerservice.service.dto.response.individualCustomer.IndCustCreateResponseDto;
 import com.etiya.customerservice.entity.IndividualCustomer;
 import com.etiya.customerservice.mapper.IndividualCustomerMapper;
 import com.etiya.customerservice.repository.IndividualCustomerRepository;
+import com.etiya.customerservice.service.abstracts.IndividualCustomerService;
+import com.etiya.customerservice.service.dto.request.individualCustomer.CreateIndividualCustomerRequestDto;
+import com.etiya.customerservice.service.dto.request.individualCustomer.UpdateIndividualCustomerRequestDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.CreateIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.GetByIdIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.ListIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.UpdateIndividualCustomerResponseDto;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class IndividualCustomerServiceImpl implements IndividualCustomerService
 {
     private final IndividualCustomerRepository individualCustomerRepository;
+    private final IndividualCustomerMapper individualCustomerMapper;
+
 
     @Override
-    public List<IndividualCustomer> getAll() {
-        return individualCustomerRepository.findAll();
+    public List<ListIndividualCustomerResponseDto> getAll() {
+        List<IndividualCustomer> individualCustomerList = individualCustomerRepository.findAll();
+        return individualCustomerMapper.listIndividualCustomerResponseDtoListFromIndividualCustomerList(individualCustomerList);
     }
 
     @Override
-    public IndividualCustomer getById(Long id) {
-        return individualCustomerRepository.findById(id).orElseThrow();
+    public GetByIdIndividualCustomerResponseDto getById(Long id) {
+        Optional<IndividualCustomer> individualCustomer = individualCustomerRepository.findById(id);
+        return individualCustomerMapper.getByIdIndividualCustomerResponseDtoFromIndividualCustomer(individualCustomer.get());
     }
 
     @Override
-    public IndCustCreateResponseDto add(IndCustCreateRequestDto customer) {
-        IndividualCustomer _customer = IndividualCustomerMapper.INSTANCE.indCustFromCreateDto(customer);
-        return IndividualCustomerMapper.INSTANCE.indCustCreateResponse(individualCustomerRepository.save(_customer));
+    public CreateIndividualCustomerResponseDto add(CreateIndividualCustomerRequestDto createIndividualCustomerRequestDto) {
+        // todo check if the given city exists
+        IndividualCustomer individualCustomer = individualCustomerMapper.individualCustomerFromCreateIndividualCustomerRequestDto(createIndividualCustomerRequestDto);
+        return individualCustomerMapper.createIndividualCustomerResponseDtoFromIndividualCustomer(individualCustomerRepository.save(individualCustomer));
+    }
+
+    @Override
+    public UpdateIndividualCustomerResponseDto update(UpdateIndividualCustomerRequestDto updateIndividualCustomerRequestDto) {
+        // todo check if the given city exists
+        IndividualCustomer individualCustomer = individualCustomerMapper.individualCustomerFromUpdateIndividualCustomerRequestDto(updateIndividualCustomerRequestDto);
+        individualCustomer = individualCustomerRepository.save(individualCustomer);
+        return individualCustomerMapper.updateIndividualCustomerResponseDtoFromIndividualCustomer(individualCustomer);
     }
 
     @Override
     public void delete(Long id) {
-        IndividualCustomer individualCustomer = individualCustomerRepository.findById(id).get();
-        individualCustomer.setDeletedDate(LocalDateTime.now());
-        individualCustomerRepository.save(individualCustomer);
+        individualCustomerRepository.deleteById(id);
     }
-
-
 }

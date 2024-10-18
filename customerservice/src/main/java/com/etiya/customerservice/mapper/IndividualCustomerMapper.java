@@ -1,15 +1,32 @@
 package com.etiya.customerservice.mapper;
 
-import com.etiya.customerservice.service.dto.request.individualCustomer.IndCustCreateRequestDto;
-import com.etiya.customerservice.service.dto.response.individualCustomer.IndCustCreateResponseDto;
 import com.etiya.customerservice.entity.IndividualCustomer;
+import com.etiya.customerservice.service.dto.request.individualCustomer.CreateIndividualCustomerRequestDto;
+import com.etiya.customerservice.service.dto.request.individualCustomer.UpdateIndividualCustomerRequestDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.CreateIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.GetByIdIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.ListIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.UpdateIndividualCustomerResponseDto;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
+import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper
-public interface IndividualCustomerMapper {
-    IndividualCustomerMapper INSTANCE = Mappers.getMapper(IndividualCustomerMapper.class);
+import java.util.List;
 
-    IndividualCustomer indCustFromCreateDto(IndCustCreateRequestDto dto);
-    IndCustCreateResponseDto indCustCreateResponse(IndividualCustomer individualCustomer);
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public abstract class IndividualCustomerMapper {
+    public abstract IndividualCustomer individualCustomerFromCreateIndividualCustomerRequestDto(CreateIndividualCustomerRequestDto dto);
+
+    public abstract IndividualCustomer individualCustomerFromUpdateIndividualCustomerRequestDto(UpdateIndividualCustomerRequestDto dto);
+
+    public abstract CreateIndividualCustomerResponseDto createIndividualCustomerResponseDtoFromIndividualCustomer(IndividualCustomer individualCustomer);
+
+    public abstract GetByIdIndividualCustomerResponseDto getByIdIndividualCustomerResponseDtoFromIndividualCustomer(IndividualCustomer individualCustomer);
+
+    public abstract UpdateIndividualCustomerResponseDto updateIndividualCustomerResponseDtoFromIndividualCustomer(IndividualCustomer individualCustomer);
+
+    public abstract List<ListIndividualCustomerResponseDto> listIndividualCustomerResponseDtoListFromIndividualCustomerList(List<IndividualCustomer> individualCustomerList);
+
+    public abstract ListIndividualCustomerResponseDto individualCustomerToIndividualCustomerResponseDto(IndividualCustomer individualCustomer);
+
 }

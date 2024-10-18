@@ -10,6 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateAttributeValueRequestDto {
-    private int attributeId;
+    private Long attributeId;
     private String value;
 }

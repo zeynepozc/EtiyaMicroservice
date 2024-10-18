@@ -1,9 +1,14 @@
 package com.etiya.customerservice.controller;
 
-import com.etiya.customerservice.service.dto.request.individualCustomer.IndCustCreateRequestDto;
-import com.etiya.customerservice.service.dto.response.individualCustomer.IndCustCreateResponseDto;
-import com.etiya.customerservice.entity.IndividualCustomer;
 import com.etiya.customerservice.service.abstracts.IndividualCustomerService;
+import com.etiya.customerservice.service.dto.request.individualCustomer.CreateIndividualCustomerRequestDto;
+import com.etiya.customerservice.service.dto.request.individualCustomer.UpdateIndividualCustomerRequestDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.CreateIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.GetByIdIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.ListIndividualCustomerResponseDto;
+import com.etiya.customerservice.service.dto.response.individualCustomer.UpdateIndividualCustomerResponseDto;
+
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,38 +23,51 @@ public class IndividualCustomersController {
   private final IndividualCustomerService individualCustomerService;
 
   @GetMapping
-  public List<IndividualCustomer> getAll(){
+  public List<ListIndividualCustomerResponseDto> getAll(){
     return individualCustomerService.getAll();
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<IndividualCustomer> getById(@PathVariable Long id){
-    IndividualCustomer individualCustomer = individualCustomerService.getById(id);
+  public ResponseEntity<GetByIdIndividualCustomerResponseDto> getById(@PathVariable Long id){
+    GetByIdIndividualCustomerResponseDto individualCustomerResponseDto = individualCustomerService.getById(id);
 
-    if (individualCustomer != null) {
-      return ResponseEntity.ok(individualCustomer);
+    if (individualCustomerResponseDto != null) {
+      return ResponseEntity.ok(individualCustomerResponseDto);
     } else {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
   }
 
   @PostMapping
-  public ResponseEntity<IndCustCreateResponseDto> add(@RequestBody IndCustCreateRequestDto customer){
-    IndCustCreateResponseDto _customer = individualCustomerService.add(customer);
+  public ResponseEntity<CreateIndividualCustomerResponseDto> add(@RequestBody @Valid CreateIndividualCustomerRequestDto individualCustomer){
+    CreateIndividualCustomerResponseDto _individualCustomer = individualCustomerService.add(individualCustomer);
 
-    if (_customer != null) {
-      return ResponseEntity.status(HttpStatus.CREATED).body(_customer);
+    if (_individualCustomer != null) {
+      return ResponseEntity.status(HttpStatus.CREATED).body(_individualCustomer);
     } else {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
   }
+
   @DeleteMapping("/{id}")
   public ResponseEntity<Void> delete(@PathVariable Long id){
-    IndividualCustomer individualCustomer = individualCustomerService.getById(id);
+    GetByIdIndividualCustomerResponseDto country = individualCustomerService.getById(id);
 
-    if (individualCustomer != null) {
+    if (country != null) {
       individualCustomerService.delete(id);
       return new ResponseEntity<>(HttpStatus.OK);
+    } else {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+  }
+
+  @PutMapping
+  public ResponseEntity<UpdateIndividualCustomerResponseDto> update(@RequestBody @Valid UpdateIndividualCustomerRequestDto individualCustomer){
+    GetByIdIndividualCustomerResponseDto individualCustomerDto = individualCustomerService.getById(individualCustomer.getId());
+
+    if (individualCustomerDto != null) {
+      UpdateIndividualCustomerResponseDto individualCustomerResponseDto = individualCustomerService.update(individualCustomer);
+      return ResponseEntity.ok(individualCustomerResponseDto);
     } else {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }

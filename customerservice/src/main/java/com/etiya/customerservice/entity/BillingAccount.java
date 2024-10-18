@@ -16,6 +16,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Table(name = "billing_accounts")
 public class BillingAccount extends BaseEntity {
+    // todo Billing Hesap ise ve create, update ve delete tarihleri baseEntityden geliyorsa billingDate nedir?
+    // todo bu bir hesap fatura değil fatura tarihi neyi ifade ediyor?
+
     @Id
     @Column(name = "id")
     private Long id;

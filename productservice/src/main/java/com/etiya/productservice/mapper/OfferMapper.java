@@ -1,4 +1,5 @@
 package com.etiya.productservice.mapper;
+
 import com.etiya.productservice.entity.Offer;
 import com.etiya.productservice.service.dto.request.offer.CreateOfferRequestDto;
 import com.etiya.productservice.service.dto.request.offer.UpdateOfferRequestDto;
@@ -7,22 +8,21 @@ import com.etiya.productservice.service.dto.responses.offer.GetByIdOfferResponse
 import com.etiya.productservice.service.dto.responses.offer.ListOfferResponseDto;
 import com.etiya.productservice.service.dto.responses.offer.UpdateOfferResponseDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
 
-@Mapper
-public interface OfferMapper {
-    OfferMapper INSTANCE = org.mapstruct.factory.Mappers.getMapper(OfferMapper.class);
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public abstract class OfferMapper {
+    public abstract Offer offerFromCreateOfferRequestDto(CreateOfferRequestDto dto);
 
-    Offer offerFromCreateOfferRequestDto(CreateOfferRequestDto dto);
+    public abstract CreateOfferResponseDto createOfferResponseDtoFromOffer(Offer offer);
 
-    CreateOfferResponseDto createOfferResponseDtoFromOffer(Offer offer);
+    public abstract Offer offerFromUpdateOfferRequestDto(UpdateOfferRequestDto dto);
 
-    Offer offerFromUpdateOfferRequestDto(UpdateOfferRequestDto dto);
-
-    UpdateOfferResponseDto updateOfferResponseDtoFromOffer(Offer offer);
-    GetByIdOfferResponseDto getByIdOfferResponseDtoFromOffer(Offer offer);
-    List<ListOfferResponseDto> offerList(List<Offer> offers);
+    public abstract UpdateOfferResponseDto updateOfferResponseDtoFromOffer(Offer offer);
+    public abstract GetByIdOfferResponseDto getByIdOfferResponseDtoFromOffer(Offer offer);
+    public abstract List<ListOfferResponseDto> offerList(List<Offer> offers);
 }
 

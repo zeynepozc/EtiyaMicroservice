@@ -19,24 +19,25 @@ import java.util.List;
 public class ProductAttributeServiceImpl implements ProductAttributeService {
 
     private final ProductAttributeRepository productAttributeRepository;
+    private final ProductAttributeMapper productAttributeMapper;
 
     @Override
     public List<ListProductAttributeResponseDto> getAll() {
         List<ProductAttribute> productAttributes = productAttributeRepository.findAll();
-        return ProductAttributeMapper.INSTANCE.productAttributeList(productAttributes);
+        return productAttributeMapper.productAttributeList(productAttributes);
     }
 
     @Override
     public GetByIdProductAttributeResponseDto getById(Long id) {
         ProductAttribute productAttribute = productAttributeRepository.findById(id).orElseThrow();
-        return ProductAttributeMapper.INSTANCE.getByIdProductAttributeResponseDtoFromProductAttribute(productAttribute);
+        return productAttributeMapper.getByIdProductAttributeResponseDtoFromProductAttribute(productAttribute);
     }
 
     @Override
     public CreateProductAttributeResponseDto add(CreateProductAttributeRequestDto createProductAttributeRequestDto) {
-        ProductAttribute productAttribute = ProductAttributeMapper.INSTANCE.productAttributeFromCreateProductAttributeRequestDto(createProductAttributeRequestDto);
+        ProductAttribute productAttribute = productAttributeMapper.productAttributeFromCreateProductAttributeRequestDto(createProductAttributeRequestDto);
         ProductAttribute addedProductAttribute = productAttributeRepository.save(productAttribute);
-        return ProductAttributeMapper.INSTANCE.createProductAttributeResponseDtoFromProductAttribute(addedProductAttribute);
+        return productAttributeMapper.createProductAttributeResponseDtoFromProductAttribute(addedProductAttribute);
     }
 
     @Override
@@ -46,9 +47,9 @@ public class ProductAttributeServiceImpl implements ProductAttributeService {
 
     @Override
     public UpdateProductAttributeResponseDto update(Long id, UpdateProductAttributeRequestDto updateProductAttributeRequestDto) {
-        ProductAttribute productAttribute = ProductAttributeMapper.INSTANCE.productAttributeFromUpdateProductAttributeRequestDto(updateProductAttributeRequestDto);
+        ProductAttribute productAttribute = productAttributeMapper.productAttributeFromUpdateProductAttributeRequestDto(updateProductAttributeRequestDto);
         productAttribute.setId(id);
         ProductAttribute updatedProductAttribute = productAttributeRepository.save(productAttribute);
-        return ProductAttributeMapper.INSTANCE.updateProductAttributeResponseDtoFromProductAttribute(updatedProductAttribute);
+        return productAttributeMapper.updateProductAttributeResponseDtoFromProductAttribute(updatedProductAttribute);
     }
 }

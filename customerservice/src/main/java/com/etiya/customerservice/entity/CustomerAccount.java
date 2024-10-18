@@ -18,10 +18,11 @@ import org.hibernate.annotations.SQLRestriction;
 public class CustomerAccount extends BaseEntity
 {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customerId;
 

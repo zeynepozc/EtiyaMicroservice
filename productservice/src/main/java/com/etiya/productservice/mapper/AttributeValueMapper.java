@@ -9,23 +9,23 @@ import com.etiya.productservice.service.dto.responses.attributeValue.UpdateAttri
 import com.etiya.productservice.entity.AttributeValue;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
-@Mapper
-public interface AttributeValueMapper {
-    AttributeValueMapper INSTANCE = Mappers.getMapper(AttributeValueMapper.class);
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public abstract class AttributeValueMapper {
     @Mapping(source="attributeId", target = "productAttribute.id")
-    AttributeValue attributeValueFromCreateAttributeValueRequestDto(CreateAttributeValueRequestDto createAttributeValueRequestDto);
+    public abstract AttributeValue attributeValueFromCreateAttributeValueRequestDto(CreateAttributeValueRequestDto createAttributeValueRequestDto);
     @Mapping(source = "productAttribute.id", target="attributeId")
-    CreateAttributeValueResponseDto createAttributeValueResponseDtoFromAttributeValue(AttributeValue attributeValue);
+    public abstract CreateAttributeValueResponseDto createAttributeValueResponseDtoFromAttributeValue(AttributeValue attributeValue);
     @Mapping(source="attributeId", target = "productAttribute.id")
-    AttributeValue attributeValueFromUpdateAttributeValueRequestDto(UpdateAttributeValueRequestDto updateAttributeValueRequestDto);
+    public abstract AttributeValue attributeValueFromUpdateAttributeValueRequestDto(UpdateAttributeValueRequestDto updateAttributeValueRequestDto);
     @Mapping(source = "productAttribute.id", target="attributeId")
-    UpdateAttributeValueResponseDto updateAttributeValueResponseDtoFromAttributeValue(AttributeValue attributeValue);
+    public abstract UpdateAttributeValueResponseDto updateAttributeValueResponseDtoFromAttributeValue(AttributeValue attributeValue);
     @Mapping(source = "productAttribute.id", target="attributeId")
-    List<ListAttributeValueResponseDto> attributeValueList(List<AttributeValue> attributeValueList);
+    public abstract List<ListAttributeValueResponseDto> attributeValueList(List<AttributeValue> attributeValueList);
     @Mapping(source = "productAttribute.id", target="attributeId")
-    ListAttributeValueResponseDto attributeValueList(AttributeValue attributeValue);
-    GetByIdAttributeValueResponseDto getByIdAttributeValueResponseDtoFromAttributeValue(AttributeValue attributeValue);
+    public abstract ListAttributeValueResponseDto attributeValueList(AttributeValue attributeValue);
+    @Mapping(source = "productAttribute.id", target="attributeId")
+    public abstract GetByIdAttributeValueResponseDto getByIdAttributeValueResponseDtoFromAttributeValue(AttributeValue attributeValue);
 }

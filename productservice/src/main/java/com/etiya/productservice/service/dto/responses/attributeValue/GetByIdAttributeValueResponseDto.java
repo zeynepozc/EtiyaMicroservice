@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class GetByIdAttributeValueResponseDto {
     private Long id;
-    private int attributeId;
+    private Long attributeId;
     private String value;
     private boolean isActive;
 }

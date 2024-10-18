@@ -21,7 +21,7 @@ public class OfferProduct {
 
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
-    private Product productId;
+    private Product product; 
 
     @ManyToOne
     @JoinColumn(name = "offer_id", nullable = false)
